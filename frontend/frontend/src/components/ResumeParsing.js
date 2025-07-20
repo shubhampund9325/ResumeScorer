@@ -111,7 +111,7 @@ const ResumeParsing = () => {
     });
 
     try {
-      const genAI = new GoogleGenerativeAI("AIzaSyBc1q_jtHKuXYnkZhyCsNCoZ5hKl5Wgkh0");
+      const genAI = new GoogleGenerativeAI("Put your APi key");
       const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
 
       const prompt = `
