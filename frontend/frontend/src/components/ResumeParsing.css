@@ -1,0 +1,194 @@
+:root {
+    --primary: #3f51b5;
+    --secondary: #6c757d;
+    --accent: #4dabf7;
+    --light: #f9f9fc;
+    --dark: #212529;
+    --success: #28a745;
+    --error: #dc3545;
+    --transition: all 0.3s ease;
+  }
+  
+  body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--light);
+    color: var(--dark);
+  }
+  
+  /* Full Page Background */
+  .resume-parser-page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    background: linear-gradient(135deg, #f0f4ff, #ffffff);
+  }
+  
+  /* Main Card */
+  .resume-parser {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    width: 100%;
+    max-width: 640px;
+    padding: 2rem;
+    border-radius: 24px;
+    box-shadow: 0 20px 60px rgba(63, 81, 181, 0.2);
+    transition: var(--transition);
+    animation: fadeIn 0.4s ease;
+  }
+  
+  /* Title */
+  .section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary);
+    text-align: center;
+    position: relative;
+    margin-bottom: 1.8rem;
+  }
+  .section-title::after {
+    content: "";
+    width: 50px;
+    height: 4px;
+    background: var(--accent);
+    display: block;
+    margin: 12px auto 0;
+    border-radius: 4px;
+  }
+  
+  /* File Upload Label */
+  label[for="file-upload"] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 65px;
+    border: 2px dashed var(--accent);
+    background-color: #f0f8ff;
+    border-radius: 16px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: var(--transition);
+  }
+  label[for="file-upload"]:hover {
+    background-color: #e3f2fd;
+    border-color: var(--primary);
+    transform: scale(1.02);
+  }
+  
+  /* Button */
+  button {
+    background-color: var(--primary);
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 1rem;
+    border: none;
+    transition: var(--transition);
+    width: 100%;
+    margin-top: 1.5rem;
+  }
+  button:hover {
+    background-color: var(--accent);
+    transform: translateY(-3px);
+  }
+  button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+  
+  /* Feedback Boxes */
+  .bg-green-50, .bg-red-50 {
+    padding: 1rem;
+    border-radius: 12px;
+    margin-top: 1rem;
+    animation: fadeIn 0.3s ease-out;
+  }
+  .bg-green-50 {
+    background-color: #e8fff5;
+    border-left: 6px solid var(--success);
+  }
+  .bg-red-50 {
+    background-color: #fff1f1;
+    border-left: 6px solid var(--error);
+  }
+  
+  /* Candidate Info Card */
+  .candidate-card {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 18px;
+    margin-top: 1.5rem;
+    border: 1px solid #e2e6ea;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.04);
+    transition: var(--transition);
+  }
+  .candidate-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 32px rgba(67, 97, 238, 0.18);
+  }
+  
+  /* Skill Tags */
+  .skill-chip {
+    background-color: var(--accent);
+    color: white;
+    padding: 0.4rem 1rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    margin: 0.3rem;
+    display: inline-block;
+    transition: var(--transition);
+  }
+  .skill-chip:hover {
+    background-color: var(--primary);
+  }
+  
+  /* Raw Parsed Text */
+  pre {
+    background-color: #f7f9fa;
+    padding: 1rem;
+    border-radius: 12px;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.9rem;
+    white-space: pre-wrap;
+    word-break: break-word;
+    overflow-y: auto;
+    max-height: 320px;
+    margin-top: 1.5rem;
+  }
+  pre::-webkit-scrollbar {
+    width: 8px;
+  }
+  pre::-webkit-scrollbar-thumb {
+    background-color: #adb5bd;
+    border-radius: 4px;
+  }
+  pre::-webkit-scrollbar-track {
+    background-color: #e9ecef;
+  }
+  
+  /* Fade In Animation */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* Responsive */
+  @media screen and (max-width: 640px) {
+    .resume-parser {
+      padding: 1.2rem;
+      border-radius: 14px;
+    }
+    label[for="file-upload"] {
+      height: 55px;
+      font-size: 0.9rem;
+    }
+  }
+  
